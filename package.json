@@ -2,14 +2,24 @@
   "name": "financial-recording",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dz-make-migrations": "drizzle-kit generate:pg",
+    "dz-migrate": "bun run drizzle/migration.ts",
+    "dz-seed": "bun run drizzle/seeder.ts",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
+    "@elysiajs/cookie": "^0.7.0",
+    "@elysiajs/jwt": "^0.7.0",
+    "@neondatabase/serverless": "^0.6.0",
+    "bcrypt": "^5.1.1",
+    "drizzle-orm": "^0.28.6",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/bcrypt": "^5.0.0",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.13",
+    "prettier": "^3.0.3"
   },
   "module": "src/index.js"
 }
